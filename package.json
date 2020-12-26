@@ -1,0 +1,27 @@
+{
+  "name": "radcli",
+  "version": "0.0.1",  
+  "description": "So I can stop copy/pasting this function in every script and project I write...",
+  "type": "module",
+  "main": "index.js",
+  "author": "rayepps",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "test": "c8 inforce --targetPath ./test",
+    "workaround": "./node_modules/.bin/c8 ./node_modules/.bin/inforce --targetPath ./test"
+  },
+  "c8": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 91,
+    "reporter": "html",
+    "report-dir": ".coverage"
+  },
+  "devDependencies": {
+    "c8": "^7.3.5",
+    "chai": "^4.2.0",
+    "inforce": "^0.0.10"
+  }
+}
