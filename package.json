@@ -1,5 +1,5 @@
 {
-  "name": "radcli",
+  "name": "cmdish",
   "version": "0.0.1",  
   "description": "So I can stop copy/pasting this function in every script and project I write...",
   "type": "module",
