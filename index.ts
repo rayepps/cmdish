@@ -1,13 +1,19 @@
 import { spawn } from 'child_process'
 
 
-export const command = async (cmd, { 
+export const command = (cmd: string, { 
   cwd = null, 
   quiet = false, 
   buffer = false,
   onErr = null, 
   onOut = null
-} = {}) => new Promise((res, rej) => {
+}: {
+  cwd?: string
+  quiet?: boolean
+  buffer?: boolean
+  onErr?: (str: string) => void
+  onOut?: (str: string) => void
+} = {}): Promise<[number, string]> => new Promise((res) => {
 
   const parts = cmd.split(' ') // [ 'yarn', 'install', '--silent', '--prod' ]
   const args = parts.slice(1) // [ install', '--silent', '--prod' ]
